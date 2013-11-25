@@ -48,14 +48,21 @@ class MatrizDensa < MatrizAbstracta
 
 	# Suma de matrices
 	def +(o)
+	
+		if o.instance_of? MatrizDispersa
+			other = to_densa(o)
 
+		else
+			other = o
+		end
+		
 		suma = Array.new(matriz.size - 1)
 #		for i in 0...matriz.size
 		0.upto(matriz.size - 1) do |i|
 		   	suma[i] = Array.new(matriz[i].size - 1)
 #			for j in 0...matriz[i].size
 			0.upto(matriz[i].size - 1) do |j|
-				suma[i][j] = matriz[i][j] + o.matriz[i][j]
+				suma[i][j] = matriz[i][j] + other.matriz[i][j]
 			end
 		end
 		MatrizDensa.new(suma)
@@ -155,6 +162,28 @@ class MatrizDensa < MatrizAbstracta
 		minimo
 
 	end
+
+        # Pasamos de Dispersa a Densa
+        def to_densa(o)
+
+                densa = Array.new(o.matriz.size - 1)
+                for i in 0...o.matriz.size
+                        densa[i] = Array.new(o.matriz.size - 1)
+                        for j in 0...o.matriz.size
+                                densa[i][j] = 0.to_f
+                                if o.matriz[i] != nil
+                                        o.matriz[i].each do |key, value|
+                                                if key = j
+                                                        densa[i][j] = o.matriz[i][key].to_f
+                                                end
+                                        end
+                                end
+                        end
+                end
+
+                MatrizDensa.new(densa)
+
+        end
 
 	# Añadimos el coerce
 	def coerce(other)

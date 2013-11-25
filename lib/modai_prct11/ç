@@ -265,6 +265,8 @@ class MatrizDispersa < MatrizAbstracta
                                 	matriz[i].each do |key, value|
                                         	if key = j
                                                		densa[i][j] = matriz[i][key].to_f
+						else
+							densa[i][j] = 0.to_f
                                         	end
 					end
                                 end

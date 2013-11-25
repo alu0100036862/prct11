@@ -66,9 +66,9 @@ class Racional
   # resta dos fracciones con - y dar el resultado de forma reducida
   def -(o)
 
-    if o.is_a? Integer
-      o = Racional.new(o,1)
-    end
+#    if o.is_a? Integer
+#      o = Racional.new(o,1)
+#    end
     Racional.new(num*o.denom - o.num*denom, denom*o.denom)
 
   end

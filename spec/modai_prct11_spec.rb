@@ -225,8 +225,12 @@ end
         context 'Comprobar modificacion en la hora de practica' do
 
                 it "Se debe sumar matriz DENSA con DISPERSA" do
-                        (@matrizA_P_DEN / @matrizB_P_DIS).to_s.should == MatrizDensa.new([[3,4], [5,7]]).to_s
+                        (@matrizA_P_DEN + @matrizB_P_DIS).to_s.should == MatrizDensa.new([[3,4], [5,7]]).to_s
                 end
+
+#                it "Se debe sumar matriz DISPERSA con DENSA" do
+#                        (@matrizB_P_DIS + @matriza_P_DEN).to_s.should == MatrizDensa.new([[3,4], [5,7]]).to_s
+#                end
 
                 it "Se debe sumar matriz DENSA con DISPERSA con racionales" do
                         (@matrizA_P_DEN / @matrizB_R_DIS).to_s.should == MatrizDensa.new([[3,4], [5,Racional.new(13,2)]]).to_s
