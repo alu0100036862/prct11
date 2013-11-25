@@ -253,7 +253,9 @@ class MatrizDispersa < MatrizAbstracta
 	def +(o)
 
                 suma = Array.new(matriz.size - 1)
-                for i in 0...matriz.size
+#                for i in 0...matriz.size
+		i = 0
+                (matriz.size - 1).times do
                       
 			# creamos el hash
 			if (matriz[i] != nil or o.matriz[i] != nil)
@@ -291,6 +293,8 @@ class MatrizDispersa < MatrizAbstracta
 			
 			end
 
+			i += 1
+
                 end
                 MatrizDispersa.new(suma)
 
@@ -300,7 +304,9 @@ class MatrizDispersa < MatrizAbstracta
 	def -(o)
 
                 resta = Array.new(matriz.size - 1)
-                for i in 0...matriz.size
+#                for i in 0...matriz.size
+		i = 0
+                (matriz.size - 1).times do
 
                         # creamos el hash
                         if (matriz[i] != nil or o.matriz[i] != nil)
@@ -339,6 +345,8 @@ class MatrizDispersa < MatrizAbstracta
                                 end
                         
                         end
+
+			i += 1
 
                 end
                 MatrizDispersa.new(resta)
