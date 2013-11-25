@@ -66,9 +66,11 @@ class MatrizDensa < MatrizAbstracta
 	def +(o)
 
 		suma = Array.new(matriz.size - 1)
-		for i in 0...matriz.size
+#		for i in 0...matriz.size
+		0.upto(matriz.size - 1) do |i|
 		   	suma[i] = Array.new(matriz[i].size - 1)
-			for j in 0...matriz[i].size
+#			for j in 0...matriz[i].size
+			0.upto(matriz[i].size - 1) do |j|
 				suma[i][j] = matriz[i][j] + o.matriz[i][j]
 			end
 		end
@@ -80,9 +82,11 @@ class MatrizDensa < MatrizAbstracta
         def /(o)
 
                 suma = Array.new(matriz.size - 1)
-                for i in 0...matriz.size
+#		for i in 0...matriz.size
+		0.upto(matriz.size - 1) do |i|
                         suma[i] = Array.new(matriz[i].size - 1)
-                        for j in 0...matriz[i].size
+#			for j in 0...matriz[i].size
+			0.upto(matriz[i].size - 1) do |j|
 			
 				suma[i][j] = matriz[i][j]
 					
@@ -107,9 +111,11 @@ class MatrizDensa < MatrizAbstracta
 	def -(o)
 
                 resta = Array.new(matriz.size - 1)
-                for i in 0...matriz.size
+#		for i in 0...matriz.size
+		0.upto(matriz.size - 1) do |i|
 			resta[i] = Array.new(matriz[i].size - 1)
-			for j in 0...matriz[i].size
+#			for j in 0...matriz[i].size
+			0.upto(matriz[i].size - 1) do |j|
 				resta[i][j] = matriz[i][j] - o.matriz[i][j]
 			end
                 end
@@ -121,10 +127,13 @@ class MatrizDensa < MatrizAbstracta
 	def *(o)
 
 		prod = Array.new(matriz.size - 1,0)
-		for i in 0...matriz[0].size 
+#		for i in 0...matriz[0].size 
+		0.upto(matriz[0].size - 1) do |i|
 			prod[i] = Array.new(o.matriz.size,0)
-			for j in 0...o.matriz.size
-				for pos in 0...matriz.size
+#			for j in 0...o.matriz.size
+			0.upto(o.matriz.size - 1) do |j|
+#				for pos in 0...matriz.size
+				0.upto(matriz.size - 1) do |pos|
 					prod[i][j] = prod[i][j] + (matriz[i][pos] * o.matriz[pos][j])
 				end
 			end
@@ -162,6 +171,11 @@ class MatrizDensa < MatrizAbstracta
 		minimo
 
 	end
+
+	# Añadimos el coerce
+	def coerce(other)
+		return self, other
+ 	end
 
 end
 
@@ -411,6 +425,11 @@ class MatrizDispersa < MatrizAbstracta
                 minimo
 
 	end
+
+	# Añadimos el coerce
+	def coerce(other)
+		return self, other
+ 	end
 
 end
 
