@@ -4,6 +4,8 @@ require "./lib/modai_prct11/matrizDispersa.rb"
 require "./lib/modai_prct11/matrizDensa.rb"
 
 
+require "racional"
+
 module ModaiPrct11
 	# Your code goes here...
 end
