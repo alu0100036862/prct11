@@ -55,33 +55,63 @@ class Racional
 
   # suma dos fracciones con + y dar el resultado de forma reducida
   def +(o)
+    
+    if o.is_a? Integer
+      o = Racional.new(o,1)
+    end
     Racional.new(num*o.denom + o.num*denom, denom*o.denom)
+
   end
 
   # resta dos fracciones con - y dar el resultado de forma reducida
   def -(o)
+
+    if o.is_a? Integer
+      o = Racional.new(o,1)
+    end
     Racional.new(num*o.denom - o.num*denom, denom*o.denom)
+
   end
 
   #multiplica dos fracciones con * y dar el resultado de forma reducida
   def *(o)
+
+    if o.is_a? Integer
+      o = Racional.new(o,1)
+    end
     Racional.new(num*o.num,denom*o.denom)
+
   end
 
   # divide dos fracciones con / y dar el resultado de forma reducida
   def /(o)
+
+    if o.is_a? Integer
+      o = Racional.new(o,1)
+    end
     Racional.new(num*o.denom,denom*o.num)
+
   end
 
   # calcula el resto dos fracciones con % y dar el resultado de forma reducida
   def %(o)
+
+    if o.is_a? Integer
+      o = Racional.new(o,1)
+    end
     Racional.new(num%denom, o.num%o.denom)
+
   end
 
   # Comparación de mayor, mayor igual, menor, menor igual
   def <=>(o)
     return nil unless o.instance_of? Racional
     (num.to_f / denom) <=> (o.num.to_f / o.denom)
+  end
+
+  # Añadimos el coerce
+  def coerce(other)
+    return self, other
   end
 
 end
