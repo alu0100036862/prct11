@@ -6,7 +6,7 @@ describe ModaiPrct11 do
 
         before :each do
 
-                # Matrices DENSAS
+                #== Matrices DENSAS
                 matA = [[1,2],[3,4]]
                 matB = [[221,2],[3,4]]
 
@@ -19,7 +19,7 @@ describe ModaiPrct11 do
                 @matrizA_R = MatrizDensa.new(matA_R)
                 @matrizB_R = MatrizDensa.new(matB_R)
                                 
-                # Matrices DISPERSAS
+                #== Matrices DISPERSAS
                 matC = [nil, {1 => 4}] # [[0,0],[0,4]]
                 matD = [{0 => 5}, nil] # [[5,0],[0,0]]
 
@@ -32,7 +32,7 @@ describe ModaiPrct11 do
                 @matrizC_R = MatrizDispersa.new(matC_R)
                 @matrizC_R = MatrizDispersa.new(matD_R)                                
 
-                # Matrices creadas en horas de practicas
+                #== Matrices creadas en horas de practicas
                 matA_P_DEN = [[3.4],[5.6]]
                 matB_P_DIS = [nil,{1 => 1}]
                 matB_R_DIS = [nil,{1 => Racional.new(1,2)}]
@@ -186,12 +186,6 @@ describe ModaiPrct11 do
                         (@matrizC - @matrizC).to_s.should == MatrizDispersa.new([{0 => -5}, {1 => 4}]).to_s
                 end
 
-=begin
-it "Se debe poder multiplicar dos matrices (DISPERSA)" do
-(@matrizC * @matrizC).to_s.should == MatrizDispersa.new([[227,10], [675,22]]).to_s
-end
-
-=end
                 it "Se debe poder sumar dos matrices de racionales (DISPERSA)" do
                         (@matrizC_R + @matrizC_R).to_s.should == MatrizDispersa.new([{0 => Racional.new(5,1)}, {1 => Racional.new(4,1)}]).to_s
                 end

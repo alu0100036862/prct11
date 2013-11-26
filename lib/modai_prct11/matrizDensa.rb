@@ -1,14 +1,14 @@
-# Clase de Matriz densa
+#= Clase de Matriz densa
 class MatrizDensa < MatrizAbstracta
 
-	# Inicialización
+	#== Inicialización
 	def initialize(matriz)
 		super
 	end
 
 	attr_reader :matriz, :filas, :columnas
 
-	# Convertimos a string
+	#== Convertimos a string
 	def to_s
 
 		fil = 0
@@ -32,7 +32,7 @@ class MatrizDensa < MatrizAbstracta
 
 	end
 
-	#  Matriz en punto flotante
+	#==  Matriz en punto flotante
 	def to_f
 
                 flotante = Array.new(matriz.size - 1)
@@ -46,7 +46,7 @@ class MatrizDensa < MatrizAbstracta
 
 	end
 
-	# Suma de matrices
+	#== Suma de matrices
 	def +(o)
 	
 		if o.instance_of? MatrizDispersa
@@ -57,10 +57,10 @@ class MatrizDensa < MatrizAbstracta
 		end
 		
 		suma = Array.new(matriz.size - 1)
-#		for i in 0...matriz.size
+
 		0.upto(matriz.size - 1) do |i|
 		   	suma[i] = Array.new(matriz[i].size - 1)
-#			for j in 0...matriz[i].size
+
 			0.upto(matriz[i].size - 1) do |j|
 				suma[i][j] = matriz[i][j] + other.matriz[i][j]
 			end
@@ -69,22 +69,22 @@ class MatrizDensa < MatrizAbstracta
 
 	end
 
-        # Suma de matrices densa con dispersa (sobreescribimos el operador / como prueba)
+        #== Suma de matrices densa con dispersa (sobreescribimos el operador / como prueba)
         def /(o)
 
                 suma = Array.new(matriz.size - 1)
-#		for i in 0...matriz.size
+
 		0.upto(matriz.size - 1) do |i|
                         suma[i] = Array.new(matriz[i].size - 1)
-#			for j in 0...matriz[i].size
+
 			0.upto(matriz[i].size - 1) do |j|
 			
 				suma[i][j] = matriz[i][j]
 					
-				# comprobamos el hash
+				#=== comprobamos el hash
 	                        if (o.matriz[i] != nil)
 					
-					# hay datos en el has para la columna
+					#=== hay datos en el has para la columna
 					if o.matriz[i].has_key?(j)						
                                 		suma[i][j] = matriz[i][j] + o.matriz[i][j]
 					end
@@ -98,14 +98,14 @@ class MatrizDensa < MatrizAbstracta
         end
 
 
-	# Resta de matrices
+	#== Resta de matrices
 	def -(o)
 
                 resta = Array.new(matriz.size - 1)
-#		for i in 0...matriz.size
+
 		0.upto(matriz.size - 1) do |i|
 			resta[i] = Array.new(matriz[i].size - 1)
-#			for j in 0...matriz[i].size
+
 			0.upto(matriz[i].size - 1) do |j|
 				resta[i][j] = matriz[i][j] - o.matriz[i][j]
 			end
@@ -114,16 +114,16 @@ class MatrizDensa < MatrizAbstracta
 
 	end
 
-	# Multiplicación de matrices
+	#== Multiplicación de matrices
 	def *(o)
 
 		prod = Array.new(matriz.size - 1,0)
-#		for i in 0...matriz[0].size 
+ 
 		0.upto(matriz[0].size - 1) do |i|
 			prod[i] = Array.new(o.matriz.size,0)
-#			for j in 0...o.matriz.size
+
 			0.upto(o.matriz.size - 1) do |j|
-#				for pos in 0...matriz.size
+
 				0.upto(matriz.size - 1) do |pos|
 					prod[i][j] = prod[i][j] + (matriz[i][pos] * o.matriz[pos][j])
 				end
@@ -133,7 +133,7 @@ class MatrizDensa < MatrizAbstracta
 
 	end
 
-	# Máximo de matriz
+	#== Máximo de matriz
 	def max
 
 		maximo = 0.to_f
@@ -148,7 +148,7 @@ class MatrizDensa < MatrizAbstracta
 
 	end
 
-	# Minimo de matriz
+	#== Minimo de matriz
 	def min
 
 		minimo = $tope
@@ -163,7 +163,7 @@ class MatrizDensa < MatrizAbstracta
 
 	end
 
-        # Pasamos de Dispersa a Densa
+        #== Pasamos de Dispersa a Densa
         def to_densa(o)
 
                 densa = Array.new(o.matriz.size - 1)
@@ -185,7 +185,7 @@ class MatrizDensa < MatrizAbstracta
 
         end
 
-	# Añadimos el coerce
+	#== El metodo coerce para onvierte el valor especificado en el tipo especificado.
 	def coerce(other)
 		return self, other
  	end

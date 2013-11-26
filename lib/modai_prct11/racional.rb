@@ -1,11 +1,13 @@
 # racional.rb
 require "./lib/modai_prct11/gcd.rb"
 
+#=Implemente una clase Ruby para representar los números racionales.
+#===Un número racional es un número con un numerador y un denominador de la forma. a/b
 class Racional
         
   include Comparable
         
-  # Se inicializa la fracción en su forma reducida haciendo uso de gcd
+  #== Se inicializa la fracción en su forma reducida haciendo uso de gcd
   def initialize(num, denom)
 
     raise TypeError, "El denominador debe ser mayor que cero" unless (denom != 0)
@@ -16,15 +18,15 @@ class Racional
 
   end
 
-  # Gets y Sets de @num y @denom
+  #== Gets y Sets de @num y @denom
   attr_reader :num, :denom
 
-  #mostar por la consola la fraccion de la forma: a/b
+  #== mostar por la consola la fraccion de la forma: a/b
   def to_s
     "#{num}/#{denom}"
   end
 
-  #comparar que dos fracciones son iguales
+  #== comparar que dos fracciones son iguales
   def ==(o)
     if o.instance_of? Racional
         @num == o.num && @denom == o.denom
@@ -33,27 +35,27 @@ class Racional
     end
   end
 
-  # Mostar la fraccion en formato flotante
+  #== Mostar la fraccion en formato flotante
   def to_f
     num.to_f/denom
   end
 
-  # Calcular el valor absoluto de una fraccion con el metodo abs
+  #== Calcular el valor absoluto de una fraccion con el metodo abs
   def abs
     Racional.new(num.abs, denom.abs)
   end
 
-  # calcular el reciproco de una fraccion con el metodo reciprocal
+  #== calcular el reciproco de una fraccion con el metodo reciprocal
   def reciprocal
     Racional.new(denom, num)
   end
 
-  # Calcular el opuesto de una fraccion con -
+  #== Calcular el opuesto de una fraccion con -
   def -@
     Racional.new(-denom, num)        
   end
 
-  # suma dos fracciones con + y dar el resultado de forma reducida
+  #== suma dos fracciones con + y dar el resultado de forma reducida
   def +(o)
     
     if o.is_a? Integer
@@ -63,7 +65,7 @@ class Racional
 
   end
 
-  # resta dos fracciones con - y dar el resultado de forma reducida
+  #== resta dos fracciones con - y dar el resultado de forma reducida
   def -(o)
 
     if o.is_a? Integer
@@ -73,7 +75,7 @@ class Racional
 
   end
 
-  #multiplica dos fracciones con * y dar el resultado de forma reducida
+  #== multiplica dos fracciones con * y dar el resultado de forma reducida
   def *(o)
 
     if o.is_a? Integer
@@ -83,7 +85,7 @@ class Racional
 
   end
 
-  # divide dos fracciones con / y dar el resultado de forma reducida
+  #== Divide dos fracciones con / y dar el resultado de forma reducida
   def /(o)
 
     if o.is_a? Integer
@@ -93,7 +95,7 @@ class Racional
 
   end
 
-  # calcula el resto dos fracciones con % y dar el resultado de forma reducida
+  #== Calcula el resto dos fracciones con % y dar el resultado de forma reducida
   def %(o)
 
     if o.is_a? Integer
@@ -103,13 +105,13 @@ class Racional
 
   end
 
-  # Comparación de mayor, mayor igual, menor, menor igual
+  #== GERRA DE LAS GALAXIAS : un metodo que proporciona la comparación de mayor, mayor igual, menor, menor igual
   def <=>(o)
     return nil unless o.instance_of? Racional
     (num.to_f / denom) <=> (o.num.to_f / o.denom)
   end
 
-  # Añadimos el coerce
+  #== El metodo coerce para onvierte el valor especificado en el tipo especificado.
   def coerce(other)
     return Racional.new(other,1), self
   end
