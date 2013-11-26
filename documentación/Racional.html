@@ -59,7 +59,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>racional.rb
+    <li>lib/modai_prct11/racional.rb
   </ul>
 </nav>
 
@@ -134,9 +134,25 @@
 
   <ul>
   
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
     <li class="file"><a href="./Guardfile.html">Guardfile</a>
   
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
     <li class="file"><a href="./documentación/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./lib/modai_prct11/Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="./lib/modai_prct11/matrizDispersa_rb~.html">matrizDispersa.rb~</a>
+  
+    <li class="file"><a href="./modai_prct11_gemspec.html">modai_prct11.gemspec</a>
   
   </ul>
 </nav>
@@ -245,7 +261,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 11</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">num</span>, <span class="ruby-identifier">denom</span>)
 
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;El denominador debe ser mayor que cero&quot;</span> <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">denom</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>)
@@ -290,7 +306,7 @@
 
           
           <div class="method-source-code" id="25-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 99</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">%</span>(<span class="ruby-identifier">o</span>)
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
@@ -328,7 +344,7 @@
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">o</span>)
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
@@ -366,7 +382,7 @@
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 59</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">o</span>)
   
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
@@ -404,7 +420,7 @@
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 69</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">o</span>)
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
@@ -442,7 +458,7 @@
 
           
           <div class="method-source-code" id="2D-40-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 54</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-@</span>
   <span class="ruby-constant">Racional</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">denom</span>, <span class="ruby-identifier">num</span>)        
 <span class="ruby-keyword">end</span></pre>
@@ -475,7 +491,7 @@
 
           
           <div class="method-source-code" id="2F-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 89</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 89</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">/</span>(<span class="ruby-identifier">o</span>)
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
@@ -513,7 +529,7 @@
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 109</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">o</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Racional</span>
   (<span class="ruby-identifier">num</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">denom</span>) <span class="ruby-operator">&lt;=&gt;</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">num</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">denom</span>)
@@ -547,7 +563,7 @@
 
           
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 30</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">o</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Racional</span>
       <span class="ruby-ivar">@num</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">num</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@denom</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">denom</span>
@@ -584,7 +600,7 @@
 
           
           <div class="method-source-code" id="abs-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 44</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">abs</span>
   <span class="ruby-constant">Racional</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">num</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-identifier">denom</span>.<span class="ruby-identifier">abs</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -617,7 +633,7 @@
 
           
           <div class="method-source-code" id="coerce-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 115</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 115</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Racional</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>,<span class="ruby-value">1</span>), <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
@@ -650,7 +666,7 @@
 
           
           <div class="method-source-code" id="reciprocal-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">reciprocal</span>
   <span class="ruby-constant">Racional</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">denom</span>, <span class="ruby-identifier">num</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -683,7 +699,7 @@
 
           
           <div class="method-source-code" id="to_f-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 39</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_f</span>
   <span class="ruby-identifier">num</span>.<span class="ruby-identifier">to_f</span><span class="ruby-operator">/</span><span class="ruby-identifier">denom</span>
 <span class="ruby-keyword">end</span></pre>
@@ -716,7 +732,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File racional.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/racional.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
   <span class="ruby-node">&quot;#{num}/#{denom}&quot;</span>
 <span class="ruby-keyword">end</span></pre>

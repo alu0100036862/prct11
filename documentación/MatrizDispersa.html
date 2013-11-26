@@ -59,7 +59,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>matrizDispersa.rb
+    <li>lib/modai_prct11/matrizDispersa.rb
   </ul>
 </nav>
 
@@ -84,6 +84,8 @@
   <ul class="link-list">
     
     <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-2A">#*</a>
     
     <li ><a href="#method-i-2B">#+</a>
     
@@ -112,9 +114,25 @@
 
   <ul>
   
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
     <li class="file"><a href="./Guardfile.html">Guardfile</a>
   
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
     <li class="file"><a href="./documentación/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./lib/modai_prct11/Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="./lib/modai_prct11/matrizDispersa_rb~.html">matrizDispersa.rb~</a>
+  
+    <li class="file"><a href="./modai_prct11_gemspec.html">modai_prct11.gemspec</a>
   
   </ul>
 </nav>
@@ -236,7 +254,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 6</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">matriz</span>)
 
         <span class="ruby-ivar">@matriz</span> = <span class="ruby-identifier">matriz</span>
@@ -260,6 +278,74 @@
       <h3 class="section-header">Public Instance Methods</h3>
 
     
+      <div id="method-i-2A" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">*</span><span
+            class="method-args">(o)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <h2 id="method-i-2A-label-Producto+de+matrices">Producto de matrices<span><a href="#method-i-2A-label-Producto+de+matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+          
+          
+
+          
+          <div class="method-source-code" id="2A-source">
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">o</span>)
+
+        <span class="ruby-identifier">prod</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
+
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+        (<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+              
+                <span class="ruby-comment">#=== creamos el hash si hay filas en el multiplicador</span>
+                <span class="ruby-keyword">if</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)
+                        
+                        <span class="ruby-identifier">prod</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>()
+                        <span class="ruby-comment">#=== cogemos o como base para el producto</span>
+                        <span class="ruby-identifier">prod</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>]
+
+                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span>
+
+                                <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">j</span>) 
+
+                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">j</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">i</span>)
+                                                <span class="ruby-identifier">prod</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-identifier">prod</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> (<span class="ruby-identifier">prod</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">j</span>][<span class="ruby-identifier">i</span>])
+                                        <span class="ruby-keyword">else</span>
+                                                <span class="ruby-identifier">prod</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">j</span>)
+                                        <span class="ruby-keyword">end</span>
+
+                                <span class="ruby-keyword">else</span>
+                                        <span class="ruby-identifier">prod</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">j</span>)
+                                <span class="ruby-keyword">end</span>
+                        
+                        <span class="ruby-keyword">end</span>
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">prod</span>)
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 2A-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 2A-method -->
+
+    
       <div id="method-i-2B" class="method-detail ">
         
         <div class="method-heading">
@@ -279,7 +365,7 @@
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 73</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">o</span>)
 
         <span class="ruby-identifier">suma</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
@@ -358,7 +444,7 @@
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 124</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 124</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">o</span>)
 
         <span class="ruby-identifier">resta</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
@@ -439,7 +525,7 @@
 
           
           <div class="method-source-code" id="coerce-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 237</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 276</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_densa</span>
 <span class="ruby-keyword">end</span></pre>
@@ -472,7 +558,7 @@
 
           
           <div class="method-source-code" id="max-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 179</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 218</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">max</span>
 
         <span class="ruby-identifier">maximo</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">to_f</span>
@@ -518,7 +604,7 @@
 
           
           <div class="method-source-code" id="min-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 197</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 236</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">min</span>
 
         <span class="ruby-identifier">minimo</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">to_f</span>
@@ -564,7 +650,7 @@
 
           
           <div class="method-source-code" id="to_densa-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 215</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 254</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_densa</span>
 
         <span class="ruby-identifier">densa</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
@@ -614,7 +700,7 @@
 
           
           <div class="method-source-code" id="to_f-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 53</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_f</span>
 
         <span class="ruby-identifier">flotante</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
@@ -662,7 +748,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File matrizDispersa.rb, line 17</span>
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDispersa.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
 
         <span class="ruby-identifier">fil</span> = <span class="ruby-value">0</span>

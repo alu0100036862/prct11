@@ -6,7 +6,7 @@ describe ModaiPrct11 do
 
         before :each do
 
-                #== Matrices DENSAS
+                #== Matrices DENSAS 
                 matA = [[1,2],[3,4]]
                 matB = [[221,2],[3,4]]
 
@@ -20,17 +20,21 @@ describe ModaiPrct11 do
                 @matrizB_R = MatrizDensa.new(matB_R)
                                 
                 #== Matrices DISPERSAS
-                matC = [nil, {1 => 4}] # [[0,0],[0,4]]
+                matC = [nil, {1 => 4}] # [[0,0],[0,4]] 
                 matD = [{0 => 5}, nil] # [[5,0],[0,0]]
+                matE = [{0 => 1}, {1 => 2}, {2 => 3}, {3 => 4}] # [[1,0,0,0],[0,2,0,0],[0,0,3,0],[0,0,0,4]]
+                matF = [{1 => 5, 3 => 4}, {1 => 2}, {0 => 3}, {2 => 1}] # [[0,5,0,4],[0,2,0,0],[3,0,0,0],[0,0,1,0]]
 
                 matC_R = [nil, {1 => Racional.new(4,1)}] # [[Racional.new(0,1),Racional.new(0,1)],[Racional.new(0,1),Racional.new(4,1)]]
                 matD_R = [{0 => Racional.new(5,1)}, nil] # [[Racional.new(5,1),Racional.new(0,1)],[Racional.new(0,1),Racional.new(0,1)]]
 
                 @matrizC = MatrizDispersa.new(matC)
-                @matrizC = MatrizDispersa.new(matD)
+                @matrizD = MatrizDispersa.new(matD)
+                @matrizE = MatrizDispersa.new(matE)
+                @matrizF = MatrizDispersa.new(matF)
 
                 @matrizC_R = MatrizDispersa.new(matC_R)
-                @matrizC_R = MatrizDispersa.new(matD_R)                                
+                @matrizD_R = MatrizDispersa.new(matD_R)
 
                 #== Matrices creadas en horas de practicas
                 matA_P_DEN = [[3.4],[5.6]]
@@ -185,6 +189,10 @@ describe ModaiPrct11 do
                 it "Se debe poder restar dos matrices (DISPERSA)" do
                         (@matrizC - @matrizC).to_s.should == MatrizDispersa.new([{0 => -5}, {1 => 4}]).to_s
                 end
+          
+                it "Se debe poder multiplicar dos matrices (DISPERSA)" do
+                        (@matrizE * @matrizF).to_s.should == MatrizDispersa.new([{1 => 5, 3 => 4}, {1 => 4}, {0 => 9}, {2 => 4}]).to_s
+                end
 
                 it "Se debe poder sumar dos matrices de racionales (DISPERSA)" do
                         (@matrizC_R + @matrizC_R).to_s.should == MatrizDispersa.new([{0 => Racional.new(5,1)}, {1 => Racional.new(4,1)}]).to_s
@@ -221,10 +229,6 @@ describe ModaiPrct11 do
                 it "Se debe sumar matriz DENSA con DISPERSA" do
                         (@matrizA_P_DEN + @matrizB_P_DIS).to_s.should == MatrizDensa.new([[3,4], [5,7]]).to_s
                 end
-
-#                it "Se debe sumar matriz DISPERSA con DENSA" do
-#                        (@matrizB_P_DIS + @matriza_P_DEN).to_s.should == MatrizDensa.new([[3,4], [5,7]]).to_s
-#                end
 
                 it "Se debe sumar matriz DENSA con DISPERSA con racionales" do
                         (@matrizA_P_DEN / @matrizB_R_DIS).to_s.should == MatrizDensa.new([[3,4], [5,Racional.new(13,2)]]).to_s

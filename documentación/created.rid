@@ -1,9 +1,20 @@
-Tue, 26 Nov 2013 16:17:47 +0000
-./gcd.rb	Tue, 26 Nov 2013 15:54:20 +0000
-./Guardfile	Tue, 26 Nov 2013 16:16:00 +0000
-./documentación/created.rid	Tue, 26 Nov 2013 16:17:47 +0000
-./matrizDispersa.rb	Tue, 26 Nov 2013 15:53:26 +0000
-./matrizAbstracta.rb	Tue, 26 Nov 2013 16:04:10 +0000
-./version.rb	Tue, 26 Nov 2013 15:53:30 +0000
-./racional.rb	Tue, 26 Nov 2013 15:53:28 +0000
-./matrizDensa.rb	Tue, 26 Nov 2013 15:53:24 +0000
+Tue, 26 Nov 2013 20:01:39 +0000
+./README.md	Tue, 26 Nov 2013 18:08:44 +0000
+./lib/modai_prct11.rb	Tue, 26 Nov 2013 19:57:42 +0000
+./lib/modai_prct11/gcd.rb	Tue, 26 Nov 2013 18:08:44 +0000
+./lib/modai_prct11/matrizDensa.rb	Tue, 26 Nov 2013 18:54:49 +0000
+./lib/modai_prct11/matrizDispersa.rb~	Tue, 26 Nov 2013 19:56:59 +0000
+./lib/modai_prct11/racional.rb	Tue, 26 Nov 2013 18:08:44 +0000
+./lib/modai_prct11/matrizDispersa.rb	Tue, 26 Nov 2013 19:57:22 +0000
+./lib/modai_prct11/matrizAbstracta.rb	Tue, 26 Nov 2013 18:08:44 +0000
+./lib/modai_prct11/Guardfile	Tue, 26 Nov 2013 18:08:44 +0000
+./lib/modai_prct11/version.rb	Tue, 26 Nov 2013 18:08:44 +0000
+./spec/spec_helper.rb	Tue, 26 Nov 2013 18:08:44 +0000
+./spec/modai_prct11_spec.rb	Tue, 26 Nov 2013 19:53:42 +0000
+./LICENSE.txt	Tue, 26 Nov 2013 18:08:44 +0000
+./Gemfile	Tue, 26 Nov 2013 18:08:44 +0000
+./Guardfile	Tue, 26 Nov 2013 18:13:07 +0000
+./Rakefile	Tue, 26 Nov 2013 18:08:44 +0000
+./Gemfile.lock	Tue, 26 Nov 2013 18:13:06 +0000
+./modai_prct11.gemspec	Tue, 26 Nov 2013 18:08:44 +0000
+./documentación/created.rid	Tue, 26 Nov 2013 20:01:39 +0000

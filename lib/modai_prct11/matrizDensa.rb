@@ -51,7 +51,6 @@ class MatrizDensa < MatrizAbstracta
 	
 		if o.instance_of? MatrizDispersa
 			other = to_densa(o)
-
 		else
 			other = o
 		end
@@ -61,9 +60,18 @@ class MatrizDensa < MatrizAbstracta
 		0.upto(matriz.size - 1) do |i|
 		   	suma[i] = Array.new(matriz[i].size - 1)
 
-			0.upto(matriz[i].size - 1) do |j|
+#			0.upto(matriz[i].size - 1) do |j|
+			
+			j = 0
+			(0...(matriz[i].size)).collect {
+
 				suma[i][j] = matriz[i][j] + other.matriz[i][j]
-			end
+				j += 1
+
+			}
+
+#			end
+
 		end
 		MatrizDensa.new(suma)
 
@@ -122,11 +130,16 @@ class MatrizDensa < MatrizAbstracta
 		0.upto(matriz[0].size - 1) do |i|
 			prod[i] = Array.new(o.matriz.size,0)
 
-			0.upto(o.matriz.size - 1) do |j|
+			(o.matriz.size).times do |j|
 
-				0.upto(matriz.size - 1) do |pos|
+				pos = 0
+#				0.upto(matriz.size - 1) do |pos|
+				(0...(matriz.size)).collect {
 					prod[i][j] = prod[i][j] + (matriz[i][pos] * o.matriz[pos][j])
-				end
+					pos += 1
+				}
+#				end
+
 			end
 		end
 		MatrizDensa.new(prod)
