@@ -180,7 +180,7 @@ class MatrizDispersa < MatrizAbstracta
                 prod = Array.new(matriz.size - 1)
 
 		i = 0
-                (matriz.size - 1).inject {
+                (0...(matriz.size)).inject {
                       
 			#=== creamos el hash si hay filas en el multiplicador
 			if (o.matriz[i] != nil)
