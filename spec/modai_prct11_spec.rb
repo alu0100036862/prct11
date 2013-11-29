@@ -45,6 +45,10 @@ describe ModaiPrct11 do
                 @matrizB_P_DIS = MatrizDispersa.new(matB_P_DIS)
                 @matrizB_R_DIS = MatrizDispersa.new(matB_R_DIS)
 
+		#== Matriz creada en hora de practica PRACT11
+                matPRACT = [[1,2,9],[7,8,4]]
+		@matrizPRACT = MatrizDensa.new(matPRACT)
+
         end
 
         context 'comprobar los accessors (DENSA)' do
@@ -235,5 +239,13 @@ describe ModaiPrct11 do
                 end
 
         end
+
+        context 'Comprobar modificacion en la hora de practica PRACT11' do
+
+                it "Se debe devolver la posición i,j del primer elemento que sea su cuadrado > 6" do
+                        (@matrizPRACT).encontrar{ |e| ( e * e) > 6 }.should == "[[0,2][1,0][1,1][1,2]]"
+                end
+
+	end
 
 end

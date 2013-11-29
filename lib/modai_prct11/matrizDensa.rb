@@ -203,4 +203,30 @@ class MatrizDensa < MatrizAbstracta
 		return self, other
  	end
 
+
+	#== Devolvemos la posición del primer elemento cuyo cuadrado es mayor a 6
+	def encontrar	
+	
+		valor = "["
+
+                0.upto(matriz.size - 1) do |i|
+
+                        (matriz[i].size).times do |j| 
+                                
+	         		if (yield(matriz[i][j])) 
+	         		
+					valor += "[#{i},#{j}]"
+
+		         	end
+
+                        end
+                end
+
+       		valor += "]"
+
+		valor
+
+	end
+
 end
+
