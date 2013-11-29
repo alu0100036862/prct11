@@ -85,6 +85,8 @@
     
     <li ><a href="#method-i-coerce">#coerce</a>
     
+    <li ><a href="#method-i-encontrar">#encontrar</a>
+    
     <li ><a href="#method-i-max">#max</a>
     
     <li ><a href="#method-i-min">#min</a>
@@ -511,6 +513,58 @@
 
         
       </div><!-- coerce-method -->
+
+    
+      <div id="method-i-encontrar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encontrar</span><span
+            class="method-args">() { |matriz[j]| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <h2 id="method-i-encontrar-label-Devolvemos+la+posici%C3%B3n+del+primer+elemento+cuyo+cuadrado+es+mayor+a+6">Devolvemos la posición del primer elemento cuyo cuadrado es mayor a 6<span><a href="#method-i-encontrar-label-Devolvemos+la+posici%C3%B3n+del+primer+elemento+cuyo+cuadrado+es+mayor+a+6">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+          
+          
+
+          
+          <div class="method-source-code" id="encontrar-source">
+            <pre><span class="ruby-comment"># File lib/modai_prct11/matrizDensa.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encontrar</span>  
+
+        <span class="ruby-identifier">valor</span> = <span class="ruby-string">&quot;[&quot;</span>
+
+        <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+
+                (<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">size</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> 
+                        
+                       <span class="ruby-keyword">if</span> (<span class="ruby-keyword">yield</span>(<span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>])) 
+                       
+                                <span class="ruby-identifier">valor</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;[#{i},#{j}]&quot;</span>
+
+                      <span class="ruby-keyword">end</span>
+
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">valor</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;]&quot;</span>
+
+        <span class="ruby-identifier">valor</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- encontrar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- encontrar-method -->
 
     
       <div id="method-i-max" class="method-detail ">
