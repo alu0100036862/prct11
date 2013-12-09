@@ -242,7 +242,7 @@ describe ModaiPrct11 do
 
         context 'Comprobar modificacion en la hora de practica PRACT11' do
 
-                it "Se debe devolver la posición i,j del primer elemento que sea su cuadrado > 6" do
+                it "Se debe devolver la posicion i,j del primer elemento que sea su cuadrado > 6" do
                         (@matrizPRACT).encontrar{ |e| ( e * e) > 6 }.should == "[[0,2][1,0][1,1][1,2]]"
                 end
 
